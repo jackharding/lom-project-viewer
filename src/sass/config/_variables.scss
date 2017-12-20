@@ -1,0 +1,29 @@
+
+// Mono
+$white: #ffffff;
+$off-white: #f9f9f9;
+$light-grey: #F2F2F2;
+$mid-grey: #a9a9a9;
+$dark-grey: #3B3C43;
+$darker-grey: #151515;
+$black: #555555;
+
+// Colours
+
+$each-color:
+    "white" $white,
+    "off-white" $off-white,
+    "light-grey" $light-grey,
+    "mid-grey" $mid-grey,
+    "dark-grey" $dark-grey,
+    "darker-grey" $darker-grey,
+    "black" $black;
+
+// Directions
+$each-direction: "left", "top", "right", "bottom";
+
+// Sizes
+$break-mobile-portrait: 480px;
+$break-tablet-portrait: 768px;
+$break-tablet-landscape: 1024px;
+$break-desktop: 1400px;

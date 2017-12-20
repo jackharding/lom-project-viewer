@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow:
+
+Sitemap: https://biglemon.co.uk/sitemap.xml

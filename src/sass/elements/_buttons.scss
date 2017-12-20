@@ -1,0 +1,42 @@
+
+button {
+    padding: 10px 20px;
+    font-size: 130%;
+    margin-top: 15px;
+    border: none;
+    @include border-radius(0);
+    @include transition(background-color, 0.2s);
+
+    &:hover, &:focus {
+        text-decoration: none;
+    }
+
+    &:disabled {
+        color: rgba($white, 0.4);
+    }
+
+    @each $col in $each-color {
+        $key: nth($col, 1);
+        $value: nth($col, 2);
+        &.btn-#{$key} {
+            background-color: #{$value};
+        }
+    }
+
+    &.custom-tag {
+        margin: 4px 2px;
+        color: $white!important;
+        border: none;
+        padding: 6px 15px!important;
+        font-size: 110%;
+
+        @include gridle_state (mobile) {
+            float: left;
+        }
+    }
+
+    &.btn-ghost {
+        @include border-radius(7px);
+        background-color: $white;
+    }
+}

@@ -1,0 +1,16 @@
+
+.container {
+
+	margin: 0 auto;
+	max-width : 1300px;
+	width: 100%;
+
+	@include gridle_state(tablet) {
+		max-width: 960px;
+	}
+
+	@include gridle_state(mobile) {
+		max-width: 960px;
+	}
+
+}

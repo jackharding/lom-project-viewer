@@ -1,0 +1,121 @@
+
+img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.fill-background {
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+
+		&.mobile-position {
+			@include gridle_state ( mobile ) {
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position-x: 0px;
+			}
+
+			@include gridle_state ( tablet ) {
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position-x: 0px;
+			}
+		}
+
+		&-top { //ToDo @extend with did not work "&-top".
+			background-size: auto;
+			background-repeat: no-repeat;
+			background-position: center top;
+
+			@include gridle_state ( mobile ) {
+				background-repeat: repeat;
+			}
+		}
+
+		&-bottom { //ToDo @extend with did not work "&-botttom".
+			background-size: auto;
+			background-repeat: no-repeat;
+			background-position: center bottom;
+
+			@include gridle_state ( mobile ) {
+				background-position: center top;
+			}
+		}
+
+		&-right { //ToDo @extend with did not work "&-right".
+			background-size: auto;
+			background-repeat: no-repeat;
+			background-position: right top;
+		}
+
+		&-left { //ToDo @extend with did not work "&-right".
+			background-size: auto;
+			background-repeat: no-repeat;
+			background-position: left top;
+		}
+
+		&-offset-bottom {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position-y: -50%;
+			background-position-x: 50%;
+
+		}
+
+		&-offset-top {
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position-y: 70%; //ToDo check for another way to work this one out.
+			background-position-x: 50%;
+		}
+
+	@include gridle_state ( tablet ) {
+		//background-position: right -200px bottom 0;
+	}
+
+	@include gridle_state ( mobile ) {
+		background-position-y: center;
+	}
+
+}
+
+.width80 { //ToDo could maybe remove this
+	width: 80%;
+}
+
+.center-background {
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: 85%;
+}
+
+.left-background {
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: 100% auto;
+
+	&-med-size { //ToDo work out why extend works here?
+		@extend .left-background;
+		background-size: 70% auto;
+	}
+
+	&-small-size {
+		@extend .left-background;
+		background-size: 50% auto;
+	}
+}
+
+.right-background {
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: auto 100%;
+}
+
+.fit-background-width {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+}

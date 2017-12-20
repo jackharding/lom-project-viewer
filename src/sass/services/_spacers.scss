@@ -1,0 +1,22 @@
+$no: 0;
+
+@while $no <= 300 {
+    .m#{$no} { margin: #{$no}px; }
+    .mtop#{$no} { margin-top: #{$no}px; }
+    .mbot#{$no} { margin-bottom: #{$no}px; }
+    .mleft#{$no} { margin-left: #{$no}px; }
+    .mright#{$no} { margin-right: #{$no}px; }
+    .p#{$no} { padding: #{$no}px; }
+    .ptop#{$no} { padding-top: #{$no}px; }
+    .pbot#{$no} { padding-bottom: #{$no}px; }
+    .pleft#{$no} { padding-left: #{$no}px; }
+    .pright#{$no} { padding-right: #{$no}px; }
+
+    @if($no < 50){
+        .maxw#{$no * 50} { max-width: #{$no * 50}px; }
+    }
+
+    $no: $no + 5;
+}
+
+.mauto { margin: auto }

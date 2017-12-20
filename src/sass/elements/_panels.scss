@@ -1,0 +1,6 @@
+
+.panel {
+    padding: 20px;
+    @include border-radius(8px);
+    margin-bottom: 5px;
+}

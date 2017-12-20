@@ -1,0 +1,27 @@
+
+@each $col in $each-color {
+    $colour-name: nth($col, 1);
+    $colour-var: nth($col, 2);
+
+    .bg-#{$colour-name} {
+
+        background-color: #{$colour-var};
+
+        &.bg-slightly-transparent {
+            background-color: rgba($colour-var, 0.8);
+        }
+
+        @each $size in $griddle-sizes {
+            @include gridle_state($size) {
+
+                .bg-#{$colour-name}-#{$size} {
+                    background-color: #{$colour-var};
+                }
+
+            }
+        }
+
+    }
+
+}
+

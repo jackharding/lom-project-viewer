@@ -1,0 +1,10 @@
+
+// respond to media sizes
+@function getTextColor($color) {
+    @if (lightness( $color ) > 40) {
+      @return #000000;
+    }
+    @else {
+      @return #FFFFFF;
+    }
+}

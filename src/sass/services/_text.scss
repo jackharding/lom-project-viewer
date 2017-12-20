@@ -1,0 +1,43 @@
+
+@each $col in $each-color {
+    $colour-name: nth($col, 1);
+    $colour-var: nth($col, 2);
+
+    .text-#{$colour-name} {
+
+        color: #{$colour-var}!important;
+
+        &-hover:hover {
+            color: #{$colour-var}!important;
+        }
+
+        @each $size in $griddle-sizes {
+            @include gridle_state($size) {
+
+                .text-#{$colour-name}-#{$size} {
+                    color: #{$colour-var};
+                    &-hover:hover {
+                        color: #{$colour-var}!important;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+}
+
+@each $size in $griddle-sizes {
+    @include gridle_state($size) {
+        .text-align-right-#{$size} {
+            text-align: right;
+        }
+        .text-align-center-#{$size} {
+            text-align: center;
+        }
+        .text-align-left-#{$size} {
+            text-align: left;
+        }
+    }
+}

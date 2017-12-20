@@ -1,0 +1,119 @@
+
+h1 {
+    font-size: 250%;
+    font-weight:600;
+    margin: 10px 0 20px;
+
+    @include gridle_state ( tablet ) {
+        font-size: 230%;
+    }
+
+    @include gridle_state ( mobile ) {
+        font-size: 150%;
+    }
+
+}
+
+h2 {
+    font-size: 200%;
+    font-weight: 200;
+    margin: 10px 0px;
+
+    @include gridle_state ( tablet ) {
+        font-size: 190%;
+    }
+
+    @include gridle_state ( mobile ) {
+        font-size: 150%;
+    }
+}
+
+h3 {
+    font-size: 150%;
+    font-weight: 600;
+    margin: 10px 0 20px;
+
+    @include gridle_state ( tablet ) {
+        font-size: 130%;
+    }
+
+    @include gridle_state ( mobile ) {
+        font-size: 120%;
+    }
+}
+
+h4 {
+    font-size: 140%;
+    font-weight: 600;
+
+    @include gridle_state ( tablet ) {
+        font-size: 120%;
+    }
+}
+
+h5 {
+    font-size: 120%;
+    font-weight: 200;
+    margin: 10px 0 15px;
+
+    @include gridle_state ( tablet ) {
+        font-size: 100%;
+    }
+}
+
+h6 {
+    font-size: 100%;
+    font-weight: 600;
+    margin: 5px 0;
+
+    @include gridle_state ( tablet ) {
+        font-size: 80%;
+    }
+}
+
+p {
+    font-size: 100%;
+    font-weight: 200;
+    margin-bottom: 5px;
+
+    &.lead {
+        font-size: 120%;
+        font-weight: 200;
+        line-height: 120%;
+
+        @include gridle_state ( tablet ) {
+            font-size: 115%;
+        }
+
+        @include gridle_state ( mobile ) {
+            font-size: 110%;
+        }
+    }
+
+    @include gridle_state ( tablet ) {
+        font-size: 90%;
+    }
+
+    @include gridle_state ( mobile ) {
+        font-size: 90%;
+    }
+}
+
+.small {
+    font-size: 80%;
+    font-weight: 200;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text-align-right {
+  text-align: right;
+}
+.text-align-center {
+  text-align: center;
+}
+.text-align-left {
+  text-align: left;
+}

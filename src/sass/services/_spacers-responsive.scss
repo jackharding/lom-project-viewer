@@ -1,0 +1,30 @@
+$no-resp: 0;
+
+@while $no-resp <= 300 {
+  @each $size in $griddle-sizes {
+    @include gridle_state($size) {
+      .m#{$no-resp}-#{$size} { margin: #{$no-resp}px; }
+      .mtop#{$no-resp}-#{$size} { margin-top: #{$no-resp}px; }
+      .mbot#{$no-resp}-#{$size} { margin-bottom: #{$no-resp}px; }
+      .mleft#{$no-resp}-#{$size} { margin-left: #{$no-resp}px; }
+      .mright#{$no-resp}-#{$size} { margin-right: #{$no-resp}px; }
+      .p#{$no-resp}-#{$size} { padding: #{$no-resp}px; }
+      .ptop#{$no-resp}-#{$size} { padding-top: #{$no-resp}px; }
+      .pbot#{$no-resp}-#{$size} { padding-bottom: #{$no-resp}px; }
+      .pleft#{$no-resp}-#{$size} { padding-left: #{$no-resp}px; }
+      .pright#{$no-resp}-#{$size} { padding-right: #{$no-resp}px; }
+
+      @if($no-resp < 50){
+        .maxw#{$no-resp * 50}-#{$size} { max-width: #{$no-resp * 50}px; }
+      }
+
+    }
+  }
+  $no-resp: $no-resp + 5;
+}
+
+@each $size in $griddle-sizes {
+  @include gridle_state($size) {
+    .mauto-#{$size} { margin: auto }
+  }
+}

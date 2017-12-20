@@ -1,0 +1,33 @@
+
+label {
+    color: $white;
+    font-weight:200;
+}
+input, textarea  {
+    background: transparent;
+    margin: 10px 0 5px;
+    padding: 10px 3%;
+    height: auto;
+    width: 94%;
+    font-size: 100%;
+    @include border-radius(0);
+
+    &:focus {
+        //border: inherit;
+    }
+}
+.checkbox {
+    text-align: left;
+    padding-top: 19px;
+    padding-bottom: 20px;
+
+    input {
+        width: 13px;
+        height: 13px;
+        padding: 0;
+        margin:0;
+        position: relative;
+        overflow: hidden;
+        margin-right: 20px;
+    }
+}
