@@ -1,0 +1,31 @@
+{
+	"posts": [
+		{
+			"id": 1,
+			"title": "The title",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolor fugit iste, alias, commodi laboriosam? Inventore nisi libero beatae, nihil, facilis porro illum fuga perferendis harum ducimus animi eos, rem!",
+			"image": "http://fillmurray.com/800/800",
+			"images": [
+				"http://fillmurray.com/500/500",
+				"http://fillmurray.com/500/500",
+				"http://fillmurray.com/500/300",
+				"http://fillmurray.com/500/500",
+				"http://fillmurray.com/500/500",
+				"http://fillmurray.com/700/700",
+				"http://fillmurray.com/500/500",
+				"http://fillmurray.com/400/400",
+				"http://fillmurray.com/500/500",
+				"http://fillmurray.com/700/700",
+				"http://fillmurray.com/500/500",
+				"http://fillmurray.com/500/400",
+				"http://fillmurray.com/700/700"
+			]
+		},
+		{
+			"id": 2,
+			"title": "Title two",
+			"text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis dolor fugit iste, alias, commodi laboriosam? Inventore nisi libero beatae, nihil, facilis porro illum fuga perferendis harum ducimus animi eos, rem!",
+			"image": "http://fillmurray.com/800/800"
+		}
+	]
+}
