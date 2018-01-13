@@ -22,8 +22,12 @@ class ProjectList extends Component {
 
 	render() {
 		return(
-			<div>
-				{this.renderProjects()}
+			<div className="tiles">
+				<div className="container">
+					<div className="row">
+						{this.renderProjects()}
+					</div>
+				</div>
 			</div>
 		);
 	}

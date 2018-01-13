@@ -1,9 +1,25 @@
-
+@import url('https://fonts.googleapis.com/css?family=Poppins: 300, 400, 700');
+@import "~slick-carousel/slick/slick.css";
 @import './config/index';
 @import './mixins/index';
 @import './fonts/index';
 @import './vendors/index';
 @import './components/index';
+@import './components/header';
 @import './elements/index';
 @import './pages/index';
 @import './services/index';
+
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	background: $black;
+	color: $white;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+}

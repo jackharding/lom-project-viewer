@@ -25,23 +25,29 @@ class Gallery extends Component {
 	render() {
 		const { images } = this.props;
 		const { isOpen, imgIndex } = this.state;
+		// set images for lightbox - use lightbox size if available, else use full
+		const lightboxCurrent = images[imgIndex].sizes.lightbox ? images[imgIndex].sizes.lightbox : images[imgIndex].sizes.full;
+		const lightboxNext = images[(imgIndex + 1) % images.length].sizes.lightbox ? images[(imgIndex + 1) % images.length].sizes.lightbox : images[(imgIndex + 1) % images.length].sizes.full;
+		const lightboxPrev = images[(imgIndex + images.length - 1) % images.length].sizes.lightbox ? images[(imgIndex + images.length - 1) % images.length].sizes.lightbox : images[(imgIndex + images.length - 1) % images.length].sizes.full;
 
 		let loop = 0;
 		const renderGallery = images.map(img => {
+			const src = img.sizes.tile ? img.sizes.tile : img.sizes.large;
 			loop++;
+
 			return(
-				<GalleryItem key={loop} src={img} onItemClick={this.openLightbox} index={loop - 1} />
+				<GalleryItem key={img.ID} src={src} onItemClick={this.openLightbox} index={loop - 1} />
 			);
-		})
+		});
 
 		return(
 			<div>				
 				{renderGallery}
 
 				{isOpen && <Lightbox
-					mainSrc={images[imgIndex]}
-					nextSrc={images[(imgIndex + 1) % images.length]}
-					prevSrc={images[(imgIndex + images.length - 1) % images.length]}
+					mainSrc={lightboxCurrent}
+					nextSrc={lightboxNext}
+					prevSrc={lightboxPrev}
 					onCloseRequest={() => this.setState({ isOpen: false })}
 					onMovePrevRequest={() => {
 						this.setState({
@@ -50,7 +56,7 @@ class Gallery extends Component {
 					}}
 					onMoveNextRequest={() => {
 						this.setState({
-							imgIndex: (imgIndex + images.length - 1) % images.length,
+							imgIndex: (imgIndex + 1) % images.length
 						})
 					}}
 				/>}

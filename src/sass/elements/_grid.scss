@@ -2,15 +2,12 @@
 .container {
 
 	margin: 0 auto;
-	max-width : 1300px;
+	padding: 0 30px;
+	max-width: 870px;
 	width: 100%;
 
-	@include gridle_state(tablet) {
-		max-width: 960px;
-	}
-
 	@include gridle_state(mobile) {
-		max-width: 960px;
+		padding: 0;
 	}
 
 }

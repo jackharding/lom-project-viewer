@@ -13,26 +13,32 @@ class ProjectFull extends Component {
 
 	render() {
 		const { project } = this.props;
-		console.log(project);
 		if(!project) {
 			return(
 				<div>Loading...</div>
 			);
 		}
 
-	    return (
-	    	<div>	    		
-		        <h1>{project.title}</h1>
-		        <Tabs>
-		        	<TabLink to="description">Description</TabLink>
-		        	<TabLink to="gallery">Gallery</TabLink>
+		const { title, content } = project;
+		const { gallery } = project.acf;
 
-		        	<TabContent for="description">
-		        		{project.text}
-		        	</TabContent>
-		        	<TabContent for="gallery">
-		        		<Gallery images={project.images}></Gallery>
-		        	</TabContent>
+	    return (
+	    	<div class="project">
+		        <h1>{title.rendered}</h1>
+		        <Tabs disableInlineStyles className="tabs">
+		        	<div className="tabs__nav">
+			        	<TabLink to="description">Description</TabLink>
+			        	<TabLink to="gallery">Gallery</TabLink>
+		        	</div>
+					
+					<div className="tabs__content">
+			        	<TabContent for="description">
+			        		<div dangerouslySetInnerHTML={{__html: content.rendered}}></div>		        		
+			        	</TabContent>
+			        	<TabContent for="gallery">
+			        		<Gallery images={gallery}></Gallery>
+			        	</TabContent>
+					</div>
 		        </Tabs>		        
 	    	</div>
 	    );
