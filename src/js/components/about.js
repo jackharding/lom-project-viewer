@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 
 import { getAbout } from '../actions';
 import { about } from '../reducers';
+import Loading from './loading';
 
 class About extends Component {
 	componentDidMount() {
@@ -24,7 +25,13 @@ class About extends Component {
 
 		if(!data) {
 			return(
-				<div>'Loading...'</div>
+				<div className="about-block container">
+					<div className="row">
+						<div className="gr-12">
+							<Loading />
+						</div>
+					</div>
+				</div>
 			);
 		}
 
@@ -40,8 +47,8 @@ class About extends Component {
 		return(
 			<div className="about-block container">
 				<div className="row">
-					<div className="about-block__text ptop15-mobile pleft15-mobile pright15-mobile pright25 gr-12@mobile gr-8" dangerouslySetInnerHTML={{__html: text}}></div>
-					<div className="about-block__slider gr-12@mobile gr-4">
+					<div className="about-block__text ptop15-untilTablet pright0-untilTablet pright25 gr-12@untilTablet gr-8 user-content" dangerouslySetInnerHTML={{__html: text}}></div>
+					<div className="about-block__slider gr-12@untilTablet gr-4">
 						<Slider {...settings}>
 							{images.map(this.renderGallery)}
 						</Slider>

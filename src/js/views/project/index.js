@@ -4,6 +4,7 @@ import { Tabs, TabLink, TabContent } from 'react-tabs-redux';
 
 import { getProject } from '../../actions';
 import Gallery from '../../components/gallery';
+import Loading from '../../components/loading';
 
 class ProjectFull extends Component {
 	componentDidMount() {
@@ -15,31 +16,41 @@ class ProjectFull extends Component {
 		const { project } = this.props;
 		if(!project) {
 			return(
-				<div>Loading...</div>
+				<Loading />
 			);
 		}
 
 		const { title, content } = project;
 		const { gallery } = project.acf;
+		let galleryBtn;
+		if(gallery) {
+			galleryBtn = <TabLink to="gallery"><i className="fa fa-th" aria-hidden="true"></i><span className="sr-only">Gallery</span></TabLink>;
+		} else {
+			galleryBtn = <div className="tab-link tab-link-disabled"><i className="fa fa-th" aria-hidden="true"></i><span className="sr-only">No images available</span></div>;
+		}
 
 	    return (
-	    	<div class="project">
-		        <h1>{title.rendered}</h1>
-		        <Tabs disableInlineStyles className="tabs">
-		        	<div className="tabs__nav">
-			        	<TabLink to="description">Description</TabLink>
-			        	<TabLink to="gallery">Gallery</TabLink>
-		        	</div>
-					
-					<div className="tabs__content">
-			        	<TabContent for="description">
-			        		<div dangerouslySetInnerHTML={{__html: content.rendered}}></div>		        		
-			        	</TabContent>
-			        	<TabContent for="gallery">
-			        		<Gallery images={gallery}></Gallery>
-			        	</TabContent>
-					</div>
-		        </Tabs>		        
+	    	<div className="page page--project container">
+	    		<div className="row">
+			        <Tabs disableInlineStyles className="tabs gr-12">
+			        	<div className="tabs__nav row row-align-right">
+				        	<TabLink to="description"><i className="fa fa-align-left" aria-hidden="true"></i><span className="sr-only">Description</span></TabLink>
+				        	{galleryBtn}
+			        	</div>
+						
+						<div className="tabs__content">
+				        	<TabContent for="description">
+			        			<h1 className="title title--lg">{title.rendered}</h1>
+				        		<div className="user-content" dangerouslySetInnerHTML={{__html: content.rendered}}></div>		        		
+				        	</TabContent>
+				        	{gallery && 
+					        	<TabContent for="gallery">
+					        		<Gallery images={gallery}></Gallery>
+					        	</TabContent>
+				        	}
+						</div>
+			        </Tabs>		        
+	    		</div>
 	    	</div>
 	    );
 	}

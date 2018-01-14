@@ -17,8 +17,11 @@
 @include gridle_register_state ( default , (
 	min-width: 0
 ) );
-
+@include gridle_register_state ( xs , (
+	max-width: $break-mobile-portrait - 1
+) );
 @include gridle_register_state ( mobile , (
+	min-width: $break-mobile-portrait,
 	max-width: $break-tablet-portrait - 1
 ) );
 @include gridle_register_state ( mobilePort , (
@@ -26,6 +29,9 @@
 ) );
 @include gridle_register_state ( mobileLand , (
 	query: "(max-width: #{$break-tablet-portrait - 1}) AND (orientation: landscape)"
+) );
+@include gridle_register_state ( untilTablet , (
+	max-width: $break-tablet-portrait - 1
 ) );
 
 @include gridle_register_state ( tablet , (
@@ -39,6 +45,10 @@
 	query: "(max-width: #{$break-tablet-portrait}) AND (max-width: #{$break-tablet-landscape}) AND (orientation: landscape)"
 ) );
 
+@include gridle_register_state ( tabletUp , (
+	min-width: $break-tablet-portrait,
+) );
+
 @include gridle_register_state ( desktop , (
 	min-width : $break-tablet-landscape + 1,
 	max-width : $break-desktop
@@ -48,7 +58,7 @@
 	min-width : $break-desktop + 1
 ) );
 
-$griddle-sizes: default, mobile, mobileLand, mobilePort, tablet, tabletLand, tabletPort, desktop, xl;
+$griddle-sizes: default, xs, mobile, mobileLand, mobilePort, untilTablet, tablet, tabletLand, tabletPort, tabletUp, desktop, xl;
 
 /**
  * Generate my classes and set the container

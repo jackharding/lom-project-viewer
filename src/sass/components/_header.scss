@@ -2,3 +2,9 @@
 	width: 175px;
 	margin: 15px auto;
 }
+
+@media screen and (min-width: 992px) {
+	.header__logo {
+		margin: 35px auto 25px;
+	}
+}

@@ -1,0 +1,17 @@
+.page--project {
+	position: relative;
+
+	.tabs__nav {
+		position: absolute;
+		top: -53px;
+		right: 30px;
+
+		@include gridle_state( untilTablet ) {
+			right: 15px;
+		}
+
+		@include gridle_state( tabletUp ) {
+			top: -92px;
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.loading {
+	text-align: center;
+	>div {
+		display: inline-block;
+		width: 11px;
+		height: 11px;
+		border-radius: 50%;
+		animation: loading-balls 1.4s infinite ease-in-out both;
+		background: $green;
+		&:nth-of-type(1) {
+			animation-delay: .32s;
+		}
+		&:nth-of-type(2) {
+			animation-delay: .16s;
+		}
+
+		+div {
+			margin-left: 4px;
+		}
+	}
+}

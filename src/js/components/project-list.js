@@ -6,6 +6,7 @@ import { bindActionCreators } from "redux";
 import { getProjects } from '../actions';
 import { projects } from '../reducers';
 import ProjectTile from './project-tile';
+import Loading from './loading';
 
 class ProjectList extends Component {
 	componentDidMount() {
@@ -21,11 +22,15 @@ class ProjectList extends Component {
 	}
 
 	render() {
+		const { projects } = this.props;
 		return(
-			<div className="tiles">
-				<div className="container">
-					<div className="row">
-						{this.renderProjects()}
+			<div>			
+				{!Object.keys(projects).length && <Loading />}
+				<div className="tiles">
+					<div className="container">
+						<div className="row">
+							{this.renderProjects()}
+						</div>
 					</div>
 				</div>
 			</div>

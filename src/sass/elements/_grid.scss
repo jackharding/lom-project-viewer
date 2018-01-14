@@ -6,8 +6,8 @@
 	max-width: 870px;
 	width: 100%;
 
-	@include gridle_state(mobile) {
-		padding: 0;
+	@include gridle_state(untilTablet) {
+		padding: 0 15px;
 	}
 
 }

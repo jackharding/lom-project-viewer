@@ -1,49 +1,70 @@
-// .tiles {
-	// display: flex;
-	// flex-wrap: wrap;
-// }
-
 .tile {
-	position: relative;
-	// width: 50%;
-	height: 0;
-	padding-bottom: 50%;
-	background-size: cover;
-	background-position: center;
-	a {
-		display: flex;
-		align-items: flex-end;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		color: #fff;
-		background: rgba(0,0,0,0.85);
-		opacity: 0;
-		transition: .3s;
+	>a {
+		display: block;
+		@include dark-hover;
 	}
+}
 
-	&:hover {
-		a {
-			opacity: 1;
+.tile__img {
+	position: relative;
+	height: 0;
+	padding-bottom: 75%;
+	background-size: cover;
+	background-position: center;	
+}
+
+.tile__content {
+	margin-top: 10px;
+	a {
+		color: #ffff;
+	}
+}
+
+.tile__title {
+	position: relative;
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 100%;
+	font-weight: 400;
+}
+
+@include gridle_state(xs) {
+	.tile {
+		&:nth-of-type(n+2) {
+			margin-top: 25px;
 		}
 	}
 }
 
-.tile__content {
-	padding: 8px;
-}
-
-.tile__title {
-	margin: 0;
-	text-transform: uppercase;
-	font-size: 90%;
-	font-weight: 400;
-}
-
-@media screen and (min-width: 768px) {
+@include gridle_state(mobile) {
 	.tile {
-		padding-bottom: calc(100% / 3);
+		&:nth-of-type(n+3) {
+			margin-top: 35px;
+		}
+
+		&:nth-of-type(2n+1) {
+			padding-right: 7.5px;
+		}
+		&:nth-of-type(2n+2) {
+			padding-left: 7.5px;
+		}
+	}
+}
+
+@include gridle_state(tabletUp) {
+	.tile {
+		&:nth-of-type(3n+1) {
+			padding-right: 15px;
+		}
+		&:nth-of-type(3n+2) {
+			padding-right: 7.5px;
+			padding-left: 7.5px;
+		}
+		&:nth-of-type(3n+3) {
+			padding-left: 15px;
+		}
+		&:nth-of-type(n+4) {
+			margin-top: 50px;
+		}
 	}
 }

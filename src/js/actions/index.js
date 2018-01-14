@@ -7,7 +7,7 @@ export const GET_PROJECTS = 'get_projects';
 export const GET_PROJECT = 'get_project';
 export const GET_ABOUT = 'get_about';
 
-export function getProjects(dispatch) {
+export function getProjects() {
 	const request = axios.get(`${API_URL}/projects?_embed`);
 	
 	return {
@@ -17,7 +17,7 @@ export function getProjects(dispatch) {
 }
 
 export function getProject(id) {
-	const request = axios.get(`${API_URL}/projects/${id}`);
+	const request = axios.get(`${API_URL}/projects/${id}?_embed`);
 
 	return {
 		type: GET_PROJECT,

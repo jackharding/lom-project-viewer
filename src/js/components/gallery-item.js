@@ -13,7 +13,9 @@ class GalleryItem extends Component {
 
 	render() {
 		return(
-			<img src={this.props.src} onClick={this.handleClick} alt="" />
+			<div className="gallery__item gr-4 gr-3@tabletUp">
+				<div className="gallery__img" style={{ backgroundImage: `url(${this.props.src})` }} onClick={this.handleClick}></div>
+			</div>
 		);
 	}
 }

@@ -41,7 +41,7 @@ class Gallery extends Component {
 		});
 
 		return(
-			<div>				
+			<div className="gallery row">
 				{renderGallery}
 
 				{isOpen && <Lightbox
