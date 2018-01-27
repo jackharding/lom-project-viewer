@@ -42,6 +42,8 @@ class About extends Component {
 			infinite: false,
 			arrows: false,
 			dots: true,
+			autoplay: true,
+			autoplaySpeed: 6000
 		};		
 
 		return(

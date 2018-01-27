@@ -19,7 +19,7 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount() {    
     const API_URL = 'http://localhost/lom/wp-json';
     axios.get(`${API_URL}/acf/v2/options`)
       .then(res => {
@@ -27,6 +27,9 @@ class App extends Component {
         this.setState({
           logo: acf.logo
         });
+
+        const loading = document.getElementById('app-loading');
+        loading.style.display = 'none';
       })
       .catch(err => {
         console.log(err);

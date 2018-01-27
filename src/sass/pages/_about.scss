@@ -15,12 +15,15 @@
 		list-style: none;
 		li {
 			display: inline-block;
-			width: 8px;
-			height: 8px;
-			border-radius: 50%;
-			background: #bbb;
 			button {
-				display: none;
+				width: 0;
+				height: 0;
+				padding: 4px;
+				border: 0;
+				border-radius: 50%;
+				background: #bbb;
+				overflow: hidden;
+				font-size: 0;
 			}
 
 			+li {
@@ -28,7 +31,9 @@
 			}
 
 			&.slick-active {
-				background: #1EC600;
+				button {
+					background: #1EC600;
+				}
 			}
 		}
 	}
