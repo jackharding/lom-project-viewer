@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost/LOM/wp-json/wp/v2';
+const API_URL = 'https://jackharding.co/lom/wp-json/wp/v2';
 
 export const GET_PROJECTS = 'get_projects';
 export const GET_PROJECT = 'get_project';
