@@ -31,9 +31,7 @@
     "fake-sever": "json-server --watch db.json --port 3004"
   },
   "devDependencies": {
-    "eslint-plugin-jsx-a11y": "^6.0.3",
     "react-image-lightbox": "^4.4.0",
-    "react-scripts": "1.1.0",
     "react-tabs-redux": "^2.0.1",
     "slick-carousel": "^1.8.1"
   }
