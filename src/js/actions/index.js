@@ -1,5 +1,4 @@
 import axios from 'axios';
-import _ from 'lodash';
 
 const API_URL = 'http://localhost/LOM/wp-json/wp/v2';
 

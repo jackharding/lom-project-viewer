@@ -8,7 +8,8 @@ export default function (state = {}, action) {
 
 		case GET_PROJECT:
 			return { ...state, [action.payload.data.id]: action.payload.data };
-	}
 
-	return state;
+		default:
+			return state;
+	}
 }

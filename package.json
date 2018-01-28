@@ -18,7 +18,10 @@
     "react-slick": "^0.16.0",
     "redux": "^3.7.2",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "react-image-lightbox": "^4.4.0",
+    "react-tabs-redux": "^2.0.1",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./node_modules src/sass/index.scss -o src/sass",
@@ -29,10 +32,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "fake-sever": "json-server --watch db.json --port 3004"
-  },
-  "devDependencies": {
-    "react-image-lightbox": "^4.4.0",
-    "react-tabs-redux": "^2.0.1",
-    "slick-carousel": "^1.8.1"
   }
 }

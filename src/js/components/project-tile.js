@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProjectTile = (props) => {
@@ -7,11 +7,8 @@ const ProjectTile = (props) => {
 
 	let img = '',
 		tile = '';
-
-	// console.log(content);
 		
 	if(content.featured_media) {
-		// console.log(content);
 		if(content._embedded) {			
 			img = content._embedded['wp:featuredmedia'][0].media_details.sizes;
 			if(typeof img === 'object') {

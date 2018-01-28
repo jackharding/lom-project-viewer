@@ -5,7 +5,8 @@ export default function (state = {}, action) {
 		case GET_ABOUT:
 			const { data } = action.payload;
 			return { ...state, data };
-	}
 
-	return state;
+		default:
+			return state;
+	}
 }
