@@ -14,7 +14,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.2",
     "react-router-redux": "next",
-    "react-scripts": "1.0.1",
+    "react-scripts": "1.0.2",
     "react-slick": "^0.16.0",
     "redux": "^3.7.2",
     "redux-promise": "^0.5.3",
@@ -33,7 +33,7 @@
   "devDependencies": {
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "react-image-lightbox": "^4.4.0",
-    "react-scripts": "1.0.0",
+    "react-scripts": "1.0.2",
     "react-tabs-redux": "^2.0.1",
     "slick-carousel": "^1.8.1"
   }
