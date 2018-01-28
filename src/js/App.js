@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   componentDidMount() {    
-    const API_URL = 'http://localhost/lom/wp-json';
+    const API_URL = 'https://jackharding.co/lom/wp-json';
     axios.get(`${API_URL}/acf/v2/options`)
       .then(res => {
         const { acf } = res.data;
